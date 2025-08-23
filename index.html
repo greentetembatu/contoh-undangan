@@ -10,54 +10,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <section class="layout">
-        <div class="hero-left"></div>
-        <div class="hero-right">
-            <div class="hero-right-container">
-                <h1 class="invitation-title">Undangan Pernikahan</h1>
-                <h2 class="couple-names">Wanita & Pria</h2>
-                <div id="countdown" class="countdown"></div>
-                <p class="wedding-date">Jum'at, 1 Januari 2026</p>
-                <img src="assets/pasangan2.jpg" alt="Foto Pasangan Pengantin" class="couple-photo">
-                <p class="to-text">Kepada Yth:</p>
-                <h3 id="guest-name-display" class="guest-name">Tamu Undangan</h3>
-                <button id="openWebsiteBtn" class="open-invitation-btn">Buka Undangan</button>
-                
-                <audio id="background-music" loop>
-                    <source src="NIKI - You'll be in my heart (Spotify Single)  Music Lyric Video.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>               
-            </div>
-            
-            <canvas id="fallingCanvas" class="falling-canvas"></canvas>
-            
-            <div class="control-buttons">
-                <button id="confettiButton" class="control-btn" aria-label="Celebrate">
-                    <i class="fi fi-tr-party-horn"></i>
-                </button>
-                <button id="musicButton" class="control-btn" aria-label="Toggle Music">
-                    <i class="fi fi-tr-music"></i>
-                </button>
-            </div>
 
-            <main class="invitation-content" id="invitationContent">
-                <section class="doa-section">
-                    <div class="doa-container">
-                        <h2 class="with-love">WITH LOVE</h2>
-                        <blockquote class="quran-verse">
-                            "Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan 
-                            untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung 
-                            dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang. 
-                            Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
-                            <br><cite>(Qs. Ar. Rum (30) : 21)</cite>
-                        </blockquote>
+<body>
+    <div class="container">         
+        <div class="content">
+            <div class="left">
+                <div class="section">
+                <img src="assets/pasangan2.jpg" alt="Foto Pasangan Pengantin" class="couple-photo-left">
+
+                </div>  
+            </div>
+            
+
+
+            <div class="right">
+                <div class="sidebar-widget">
+                    <div class="sidebar-widget-container">
+                        <h1 class="invitation-title">Undangan Pernikahan</h1>
+                        <h2 class="couple-names">Wanita & Pria</h2>
+                        <div id="countdown" class="countdown"></div>
+                        <p class="wedding-date">Jum'at, 1 Januari 2026</p>
+                        <img src="assets/pasangan2.jpg" alt="Foto Pasangan Pengantin" class="couple-photo-right">
+                        <p class="to-text">Kepada Yth:</p>
+                        <h3 id="guest-name-display" class="guest-name">Tamu Undangan</h3>
+                        <button id="openWebsiteBtn" class="open-invitation-btn">Buka Undangan</button>
+                
+                        <audio id="background-music" loop>
+                        <source src="NIKI - You'll be in my heart (Spotify Single)  Music Lyric Video.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                        </audio>                        
                     </div>
-                </section>
-            </main>
+                    <button id="confettiButton" aria-label="Celebrate">
+                        <i class="fi fi-tr-party-horn"></i>
+                    </button>
+                    <button id="backgroundmusic" aria-label="Nyalakan Musik">
+                        <i class="fas fa-play"></i> 
+                    </button>
+
+
+                </div>
+            </div>
         </div>
-    </section>
+        
+
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
