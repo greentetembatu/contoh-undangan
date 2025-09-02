@@ -6,56 +6,388 @@
     <title>Undangan Pernikahan - Wanita & Pria</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">         
-        <div class="content">
-            <div class="left">
-                <div class="section">
-                <img src="assets/pasangan2.jpg" alt="Foto Pasangan Pengantin" class="couple-photo-left">
-
-                </div>  
+    <section class="layout">
+        <div class="hero-left"></div>
+        <div class="hero-right">
+            <div class="hero-right-container">
+                <h1 class="invitation-title">Undangan Pernikahan</h1>
+                <h2 class="couple-names">Wanita & Pria</h2>
+                <div id="countdown" class="countdown"></div>
+                <p class="wedding-date">Jum'at, 1 Januari 2026</p>
+                <img src="assets/lestibilar6.jpg" alt="Foto Pasangan Pengantin" class="couple-photo">
+                <p class="to-text">Kepada Yth:</p>
+                <h3 id="guest-name-display" class="guest-name">Tamu Undangan</h3>
+                <button id="openWebsiteBtn" class="open-invitation-btn">Buka Undangan</button>
+                
+                <audio id="background-music" loop>
+                    <source src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>               
             </div>
             
-
-
-            <div class="right">
-                <div class="sidebar-widget">
-                    <div class="sidebar-widget-container">
-                        <h1 class="invitation-title">Undangan Pernikahan</h1>
-                        <h2 class="couple-names">Wanita & Pria</h2>
-                        <div id="countdown" class="countdown"></div>
-                        <p class="wedding-date">Jum'at, 1 Januari 2026</p>
-                        <img src="assets/pasangan2.jpg" alt="Foto Pasangan Pengantin" class="couple-photo-right">
-                        <p class="to-text">Kepada Yth:</p>
-                        <h3 id="guest-name-display" class="guest-name">Tamu Undangan</h3>
-                        <button id="openWebsiteBtn" class="open-invitation-btn">Buka Undangan</button>
-                
-                        <audio id="background-music" loop>
-                        <source src="NIKI - You'll be in my heart (Spotify Single)  Music Lyric Video.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                        </audio>                        
-                    </div>
-                    <button id="confettiButton" aria-label="Celebrate">
-                        <i class="fi fi-tr-party-horn"></i>
-                    </button>
-                    <button id="backgroundmusic" aria-label="Nyalakan Musik">
-                        <i class="fas fa-play"></i> 
-                    </button>
-
-
-                </div>
+            <canvas id="fallingCanvas" class="falling-canvas"></canvas>
+            
+            <div class="control-buttons">
+                <button id="confettiButton" class="control-btn" aria-label="Celebrate">
+                    <i class="fi fi-tr-party-horn"></i>
+                </button>
+                <button id="musicButton" class="control-btn" aria-label="Toggle Music">
+                    <i class="fi fi-tr-music"></i>
+                </button>
             </div>
-        </div>
-        
 
+            <main class="invitation-content" id="invitationContent">
+                <section id="opening" class="main-section hidden-item fade-in-up">
+                    <div class="doa-container">
+                        <h2 class="with-love"> بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْمِ</h2>
+                        <h3 class="with-love-salam"> Assalamu'alaikum Warahmatullahi Wabarakatuh</h3>
+                        <blockquote class="quran-verse">
+                            "Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan 
+                            untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung 
+                            dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang. 
+                            Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+                            <br><cite>(Qs. Ar. Rum : 21)</cite>
+                        </blockquote>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="brides-groom" class="main-section hidden-item fade-in-up">
+                        <p class="salam-quote" id="salam-quote">
+                        Dengan Memohon Ridho serta Rahmat Allah SWT, kami bermaksud menyelenggarakan Pernikahan Putra-Putri kami:
+                    </p>
+    <div class="couple-info">
+        <h2 id="bride-name">Nadia Tri Wulandari, S.Pd., M.Pd</h2>
+        <p class="parents" id="bride-parents">Putri dari Bapak Arnol (Alm) & Ibu Wa Faria</p>
     </div>
+    <p class="ampersand" id="ampersand-symbol">&</p>
+    <div class="couple-info">
+        <h2 id="groom-name">Busran, S.Pd</h2>
+        <p class="parents" id="groom-parents">Putra dari Bapak Buraera & Ibu Hasna</p>
+    </div>
+    <div class="gallery-grid-2col" id="couple-photos">
+        <div class="gallery-item-container from-left">
+            <img src="assets/lesti.jpg" alt="Foto Nadia" class="gallery-item-brides" id="bride-photo">
+            <div class="gallery-grid-2col-teks">Lesti</div>
+        </div>
+        <div class="gallery-item-container from-right">
+            <img src="assets/bilar.jpg" alt="Foto Busran" class="gallery-item-brides" id="groom-photo">
+            <div class="gallery-grid-2col-teks">Bilar</div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+                <section id="events" class="main-section hidden-item fade-in-up">
+                    <h2 id="events-title">Yang Insya Allah akan dilaksanakan pada:</h2>
+                    <div class="event-grid" id="event-details-grid">
+                        <div class="event-detail from-left" id="akad-detail">
+                            <h3 id="akad-title">Akad Nikah</h3>
+                            <p id="akad-date"><i class="far fa-calendar-alt"></i> Senin, 4 Agustus 2025 (10 Shafar 1447)</p>
+                            <p id="akad-time"><i class="far fa-clock"></i> Pukul: 09.00 WITA</p>
+                        </div>
+
+                        <div class="event-detail from-right" id="resepsi-detail">
+                            <h3 id="resepsi-title">Resepsi</h3>
+                            <p id="resepsi-date"><i class="far fa-calendar-alt"></i> Senin, 4 Agustus 2025 (10 Shafar 1447)</p>
+                            <p id="resepsi-time"><i class="far fa-clock"></i> Pukul: 12.00 WITA - Selesai</p>
+                        </div>
+                    </div>
+
+                    <div class="event-location hidden-item fade-in-up" id="event-location">
+                        <p id="location-intro">Bertempat di:</p>
+                        <h3 id="venue-name">Kediaman Kami</h3>
+                        <p id="venue-address"><i class="fas fa-map-marker-alt"></i> Jl. Terong Kel. Mokoau, Kec. Kambu, Kendari, Sulawesi Tenggara (BTN Puri Rawang Alun II)</p>
+                        <a href="https://maps.app.goo.gl/TKBN1xLasdH6qgMe8" target="_blank" class="map-link" id="map-button" aria-label="Buka Peta Lokasi"><i class="fas fa-directions"></i> Buka Peta</a>
+                    </div>
+                </section>
+
+
+
+
+
+
+<section id="gallery-brides-groom" class="main-section hidden-item fade-in-up">
+    <h3 class="ampersand-section" id="ampersand-gallery">Galeri Foto</h3>
+    <div class="gallery-grid-2col-gallery" id="couple-photos-gallery">
+        <div class="gallery-item-container-section from-left">
+            <img src="assets/lestibilar1.jpg" alt="Foto Nadia" class="gallery-item-brides-section" id="bride-photo-section">
+            <div class="gallery-grid-2col-teks-section">Lesti</div>
+        </div>
+        <div class="gallery-item-container from-right">
+            <img src="assets/lestibilar2.jpg" alt="Foto Busran" class="gallery-item-brides-section" id="groom-photo-section">
+            <div class="gallery-grid-2col-teks-section">Bilar</div>
+        </div>
+        <div class="gallery-item-container-section from-left">
+            <img src="assets/lestibilar3.jpg" alt="Foto Nadia" class="gallery-item-brides-section" id="bride-photo-section">
+            <div class="gallery-grid-2col-teks-section">Lesti</div>
+        </div>
+        <div class="gallery-item-container from-right">
+            <img src="assets/lestibilar4.jpg" alt="Foto Busran" class="gallery-item-brides-section" id="groom-photo-section">
+            <div class="gallery-grid-2col-teks-section">Bilar</div>
+        </div>
+        <div class="gallery-item-container-section from-left">
+            <img src="assets/lestibilar5.jpg" alt="Foto Nadia" class="gallery-item-brides-section" id="bride-photo-section">
+            <div class="gallery-grid-2col-teks-section">Lesti</div>
+        </div>
+        <div class="gallery-item-container from-right">
+            <img src="assets/lestibilar6.jpg" alt="Foto Busran" class="gallery-item-brides-section" id="groom-photo-section">
+            <div class="gallery-grid-2col-teks-section">Bilar</div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+                <section id="rsvp" class="main-section hidden-item fade-in-up">
+                    <h2 id="rsvp-title">Konfirmasi Kehadiran</h2>
+                    <p id="rsvp-description">Mohon informasikan kehadiran Anda agar kami dapat mempersiapkan acara dengan baik.</p>
+                    <form id="rsvp-form" class="rsvp-form">
+                        <label for="rsvp-name" id="rsvp-name-label">Nama Lengkap:</label>
+                        <input type="text" id="rsvp-name" name="name" required>
+                        <input type="hidden" name="formType" value="rsvp-form">
+
+                        <label for="rsvp-attendance" id="rsvp-attendance-label">Konfirmasi Kehadiran:</label>
+                        <select id="rsvp-attendance" name="attendance" required>
+                            <option value="">Pilih</option>
+                            <option value="will-attend">Insya Allah Hadir</option>
+                            <option value="will-not-attend">Mohon Maaf Tidak Bisa Hadir</option>
+                        </select>
+
+                        <label for="rsvp-guests" id="rsvp-guests-label">Jumlah Tamu (termasuk Anda):</label>
+                        <input type="number" id="rsvp-guests" name="guests" min="1" value="1">
+                        <button type="submit" class="submit-button" id="rsvp-submit">Kirim Konfirmasi</button>
+                        <p id="rsvp-message" class="message"></p>
+                    </form>
+                </section>
+
+
+
+                <section id="wishes" class="main-section hidden-item fade-in-up">
+                    <h2 id="wishes-title">Berikan Doa & Ucapan</h2>
+                    <p id="wishes-description">Bagikan doa dan ucapan terbaik Anda untuk kedua mempelai.</p>
+                    <form id="wishes-form" class="wishes-form">
+                        <label for="wisher-name" id="wisher-name-label">Nama Anda:</label>
+                        <input type="text" id="wisher-name" name="name" required>
+                        <input type="hidden" name="formType" value="wishes-form">
+
+                        <label for="wisher-message" id="wisher-message-label">Pesan/Doa:</label>
+                        <textarea id="wisher-message" name="message" rows="5" required></textarea>
+
+                        <button type="submit" class="submit-button" id="wishes-submit">Kirim Ucapan (maks. 100 Kata)</button>
+                        <p id="wishes-message" class="message"></p>
+                    </form>
+
+                    <div class="wishes-display-area" id="wishes-display">
+                        <button id="prevWishBtn" class="nav-button" aria-label="Previous Wish"></button>
+                        <div id="current-wish-container" class="current-wish-container">
+                        </div>
+                        <button id="nextWishBtn" class="nav-button" aria-label="Next Wish"></button>
+                    </div>
+                </section>
+
+
+
+
+
+                <section id="gift" class="main-section hidden-item fade-in-up">
+                    <h2 id="gift-title">Kirim Hadiah</h2>
+                    <p id="gift-description">Doa restu Anda adalah karunia terbaik. Namun, jika Anda berkehendak untuk memberikan tanda kasih, dapat disalurkan melalui:</p>
+
+                    <div class="gift-options-container" id="gift-options">
+                        <div class="gift-box fade-in-up" id="bni-gift-box">
+                            <img src="icon/bni.png" alt="BNI Logo" class="bank-logo" id="bni-logo">
+                            <p class="bank-account-info" id="bni-info">
+                                a.n: Nadia Tri Wulandari<br>
+                                No. Rek: <span id="bni-rek">0123456789</span>
+                            </p>
+                            <button onclick="copyToClipboard('bni-rek', this)" class="copy-button" id="bni-copy-btn">
+                                <i class="fas fa-copy"></i> Copy Rekening
+                            </button>
+                            <span class="copy-message" id="bni-copy-msg" style="display:none;">Disalin!</span>
+                        </div>
+
+                        <div class="gift-box fade-in-up" id="bri-gift-box">
+                            <img src="icon/bri.png" alt="BRI Logo" class="bank-logo" id="bri-logo">
+                            <p class="bank-account-info" id="bri-info">
+                                a.n: Basran<br>
+                                No. Rek: <span id="bri-rek">0123456789101112</span>
+                            </p>
+                            <button onclick="copyToClipboard('bri-rek', this)" class="copy-button" id="bri-copy-btn">
+                                <i class="fas fa-copy"></i> Copy Rekening
+                            </button>
+                            <span class="copy-message" id="bri-copy-msg" style="display:none;">Disalin!</span>
+                        </div>
+
+                        <div class="gift-box fade-in-up" id="bca-gift-box">
+                            <img src="icon/bca.jpg" alt="BCA Logo" class="bank-logo" id="bca-logo">
+                            <p class="bank-account-info" id="bca-info">
+                                a.n: Basran<br>
+                                No. Rek: <span id="bca-rek">0123456789101112</span>
+                            </p>
+                            <button onclick="copyToClipboard('bca-rek', this)" class="copy-button" id="bca-copy-btn">
+                                <i class="fas fa-copy"></i> Copy Rekening
+                            </button>
+                            <span class="copy-message" id="bca-copy-msg" style="display:none;">Disalin!</span>
+                        </div>
+
+                        <div class="gift-box fade-in-up" id="mandiri-gift-box">
+                            <img src="icon/mandiri.png" alt="MANDIRI Logo" class="bank-logo" id="mandiri-logo">
+                            <p class="bank-account-info" id="mandiri-info">
+                                a.n: Basran<br>
+                                No. Rek: <span id="mandiri-rek">0123456789101112</span>
+                            </p>
+                            <button onclick="copyToClipboard('mandiri-rek', this)" class="copy-button" id="mandiri-copy-btn">
+                                <i class="fas fa-copy"></i> Copy Rekening
+                            </button>
+                            <span class="copy-message" id="mandiri-copy-msg" style="display:none;">Disalin!</span>
+                        </div>
+
+                        <div class="gift-address-box fade-in-up" id="gift-address">
+                            <h4 id="gift-address-title">Atau Anda Juga Bisa Mengirim Kado Fisik Ke Alamat Berikut:</h4>
+                            <p class="address-info" id="gift-address-info">
+                                Penerima: Nadia Tri Wulandari<br>
+                                Jl. Terong Kel. Mokoau, Kec. Kambu, (BTN Puri Rawang Alun II)<br>
+                                Kendari, Sulawesi Tenggara
+                            </p>
+                            <button onclick="copyAddress(this)" class="copy-button" id="address-copy-btn">
+                                <i class="fas fa-copy"></i> Copy Alamat
+                            </button>
+                            <span class="copy-message" id="address-copy-msg" style="display:none;">Disalin!</span>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <section id="closing" class="main-section hidden-item fade-in-up">
+                    <p id="closing-message">Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+                    <p class="greeting-text" id="closing-greeting">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                </section>
+
+
+
+
+
+
+
+
+                <section id="mengundang" class="main-section hidden-item fade-in-up">
+                    <h2 id="mengundang-title">Turut Mengundang Kedua Mempelai:</h2>
+                    <div class="invitation-columns" id="invitation-lists">
+                        <div class="invitation-list" id="bride-family-list">
+                            <h3 id="bride-family-title">Pihak Mempelai Wanita :</h3>
+                            <ul id="bride-family-members">
+                                <li>Drs. La Baande</li>
+                                <li>Drs. La Ndomas</li>
+                                <li>Ahmad Mustapa, S.Pd., M.Pd</li>
+                                <li>Abdul Kadir</li>
+                                <li>La Ode Ramlan, S.Pd., MN</li>
+                                <li>Alfiadin Arnol, S.Pd.</li>
+                            </ul>
+                        </div>
+
+                        <div class="invitation-list" id="groom-family-list">
+                            <h3 id="groom-family-title">Pihak Mempelai Pria :</h3>
+                            <ul id="groom-family-members">
+                                <li>Samir, S.IP., M.M</li>
+                                <li>H. Rauf, S.Ag., M.M</li>
+                                <li>Rahian T, S.H</li>
+                                <li>Tamrin, S.P., M.M</li>
+                                <li>La Tangkalalo, S.Pd., M.Pd</li>
+                                <li>Adenang</li>
+                                <li>Awaluddin</li>
+                                <li>Haerudin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+                <section id="thank-you" class="main-section hidden-item fade-in-up">
+                    <h1 class="title has-text-centered" id="thank-you-title">Terima Kasih</h1>
+                    <p class="thank-you-message" id="thank-you-text">
+                        Dengan segala kerendahan hati, kami mengucapkan terima kasih yang sebesar-besarnya atas kehadiran dan doa restu Bapak/Ibu/Saudara/i. Semoga Allah SWT senantiasa melimpahkan rahmat dan berkah-Nya kepada kita semua.
+                    </p>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+                <footer id="main-footer">
+                    <p id="footer-copyright">© 2025 Undangan Pernikahan Nadia & Basran. All Rights Reserved.</p>
+                    <p id="footer-credit">Dibuat oleh <a href="https://greentetembatu.github.io/my-portofolio/" target="_blank">Mardani Dev</a>. Jasa Pembuatan Web Murah, <a href="mailto:greentetembatu@gmail.com">Email Kami</a> untuk info Lebih Lanjut.</p>
+                </footer>
+
+                <nav class="navbar" id="bottom-navbar">
+                    <ul class="navbar-nav" id="navbar-list">
+                        <li><a href="#opening" class="nav-link" id="nav-home"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                        <li><a href="#events" class="nav-link" id="nav-events"><i class="fas fa-calendar-alt"></i> <span>Acara</span></a></li>
+                        <li><a href="#gallery" class="nav-link" id="nav-gallery"><i class="fas fa-images"></i> <span>Galeri</span></a></li>
+                        <li><a href="#gift" class="nav-link" id="nav-gift"><i class="fas fa-gift"></i> <span>Hadiah</span></a></li>
+                        <li><a href="#rsvp" class="nav-link" id="nav-rsvp"><i class="fas fa-check-circle"></i> <span>RSVP</span></a></li>
+                        <li><a href="#wishes" class="nav-link" id="nav-wishes"><i class="fas fa-comments"></i> <span>Ucapan</span></a></li>
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 
     <script src="script.js"></script>
-
 </body>
 </html>
