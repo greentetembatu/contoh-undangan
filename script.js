@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Section Animation Observer
 function initializeSectionAnimations() {
     const observerOptions = {
-        threshold: 0.11,
+        threshold: 0.0,
         rootMargin: '0px 0px -50px 0px'
     };
 
@@ -479,6 +479,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Array untuk menyimpan data ucapan (contoh data)
     let wishes = [
         { name: "Ahmad", message: "Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.", timestamp: new Date('2025-08-01T10:00:00') },
+        { name: "Siti", message: "Selamat menempuh hidup baru. Semoga langgeng sampai maut memisahkan.", timestamp: new Date('2025-08-01T10:05:00') },
+        { name: "Fatimah", message: "Semoga pernikahan kalian selalu diberkahi Allah SWT.", timestamp: new Date('2025-08-01T10:15:00') },
+        { name: "Budi", message: "Happy wedding! Semoga cinta kalian abadi.", timestamp: new Date('2025-08-01T10:20:00') },
+        { name: "Dewi", message: "Semoga menjadi pasangan yang selalu harmonis dan penuh cinta.", timestamp: new Date('2025-08-01T10:30:00') },
+        { name: "Rizky", message: "Semoga cepat dapat momongan dan menjadi orang tua yang baik.", timestamp: new Date('2025-08-01T11:00:00') },
+        { name: "Putri", message: "Selamat menempuh hidup baru, semoga selalu dalam lindungan Allah SWT.", timestamp: new Date('2025-08-01T11:25:00') },
+        { name: "Joko", message: "Barakallah, semoga samawa ya. Aamiin.", timestamp: new Date('2025-08-01T11:40:00') },
+        { name: "Maria", message: "Semoga selalu romantis dan kompak sampai kakek nenek.", timestamp: new Date('2025-08-01T12:00:00') },
+        { name: "Leo", message: "Happy wedding! Semoga semua impian kalian tercapai. Congrats!", timestamp: new Date('2025-08-01T12:15:00') },
         { name: "Siti", message: "Selamat menempuh hidup baru. Semoga langgeng sampai maut memisahkan.", timestamp: new Date('2025-08-01T10:05:00') },
         { name: "Fatimah", message: "Semoga pernikahan kalian selalu diberkahi Allah SWT.", timestamp: new Date('2025-08-01T10:15:00') },
         { name: "Budi", message: "Happy wedding! Semoga cinta kalian abadi.", timestamp: new Date('2025-08-01T10:20:00') },
@@ -692,41 +701,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Ambil elemen target galeri dengan ID
-  const gallerySection = document.getElementById('gallery-brides-groom');
-  const galleryTitle = document.getElementById('ampersand-gallery');
-  const galleryItems = document.querySelectorAll('#couple-photos-gallery .from-left, #couple-photos-gallery .from-right');
-
-  // Opsi untuk Intersection Observer
-  const observerOptions = {
-    root: null, // Mengamati relatif terhadap viewport
-    rootMargin: '0px',
-    threshold: 0.2 // Pemicu saat 20% elemen terlihat
-  };
-
-  // Fungsi callback untuk Intersection Observer
-  const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Jika elemen terlihat, tambahkan class untuk memicu animasi
-        entry.target.classList.add('is-in-view');
-        // Hentikan pengamatan setelah elemen teranimasi
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  // Buat instance Intersection Observer
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  // Amati elemen-elemen yang akan dianimasikan
-  observer.observe(galleryTitle); // Amati judul
-  galleryItems.forEach(item => {
-    observer.observe(item); // Amati setiap item galeri
-  });
-});
